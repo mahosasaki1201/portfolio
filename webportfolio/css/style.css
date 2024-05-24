@@ -1,0 +1,283 @@
+html {
+  font-size: 16px;
+  font-family: "Noto Sans JP", "Noto Serif JP", sans-serif;
+}
+
+/*-------------------------------------
+  index top
+-------------------------------------*/
+.top {
+  width: 80%;
+  height: 100vh;
+  margin: auto;
+  padding-top: calc(100vh / 3);
+  background-color: transparent;
+}
+
+.top__bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  width: 100%;
+  height: 100%;
+  background-color: #ccc;
+}
+
+.top__name {
+  font: 2rem "Noto Serif JP";
+}
+
+.scroll {
+  position: sticky;
+  top: calc(100vh / 3 * 2);
+  width: max-content;
+  font: 1.5rem "Noto Serif JP";
+}
+
+.scroll::after {
+  position: absolute;
+  bottom: -1rem;
+  left: calc(50% - 0.5rem);
+  content: "";
+  width: 1rem;
+  height: 1rem;
+  border-right: 1px solid #000;
+  border-bottom: 1px solid #000;
+  transform: rotate(45deg);
+}
+
+/*-------------------------------------
+  index about
+-------------------------------------*/
+.about {
+  display: grid;
+  grid-template: repeat(3, max-content) / 25rem 250px 25rem;
+  gap: 2rem;
+  place-content: center;
+  width: 100%;
+  margin-top: -2rem;
+  background-color: #fff;
+}
+
+.about p {
+  line-height: 1.5;
+}
+
+.about__center {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  grid-row: 1/4;
+  grid-column: 2;
+}
+
+.about-profile {
+  position: relative;
+  padding: 1rem;
+  grid-row: 1/4;
+  background-color: #fff;
+  border: 1px solid #000;
+  border-radius: 1rem;
+}
+
+.about-profile::after {
+  position: absolute;
+  top: calc(50% - 0.5rem);
+  right: calc(-0.5rem - 1px);
+  content: "";
+  width: 1rem;
+  height: 1rem;
+  border-right: 1px solid #000;
+  border-top: 1px solid #000;
+  background-color: #fff;
+  transform: rotate(45deg);
+}
+
+.about-profile__head {
+  margin-top: 2rem;
+  padding-left: 0.5rem;
+  border-left: 1rem solid red;
+  color: red;
+  font-weight: bold;
+}
+
+.about-profile__head:first-of-type {
+  margin-top: 0;
+}
+
+.about-profile__head+p {
+  margin-top: 1rem;
+}
+
+.about-strength {
+  position: relative;
+  padding: 1rem;
+  background-color: #fff;
+  border: 1px solid #000;
+  border-radius: 1rem;
+}
+
+.about-strength::after {
+  position: absolute;
+  top: calc(50% - 0.5rem);
+  left: calc(-0.5rem - 1px);
+  content: "";
+  width: 1rem;
+  height: 1rem;
+  border-left: 1px solid #000;
+  border-top: 1px solid #000;
+  background-color: #fff;
+  transform: rotate(-45deg);
+}
+
+.about-strength__head+p {
+  margin-top: 1rem;
+}
+
+.about-strength__head {
+  padding-left: 0.5rem;
+  border-left: 0.5rem solid red;
+  font-weight: bold;
+}
+
+/*-------------------------------------
+  index works
+-------------------------------------*/
+.works {
+  width: 100%;
+  margin: auto;
+}
+
+.works__title {
+  width: max-content;
+  margin: auto;
+  color: red;
+}
+
+.works-list {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+.works-list__item {
+  flex: 0 1 calc(100% / 8);
+  height: 10rem;
+  transition: 0.2s;
+}
+
+.works-list__item:hover {
+  flex: 0 1 20rem;
+}
+
+.works-list__item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/*-------------------------------------
+  work section
+-------------------------------------*/
+.work__sect {
+  width: 80%;
+  max-width: 960px;
+  margin: 2rem auto 0;
+  padding-top: 2rem;
+  border-top: 1px solid #000;
+}
+
+/*-------------------------------------
+  front
+-------------------------------------*/
+.front {
+  width: 80%;
+  max-width: 960px;
+
+  text-align: right;
+}
+
+/*-------------------------------------
+  summary
+-------------------------------------*/
+
+.summary p:not(.summary__lead) {
+  line-height: 1.5;
+}
+
+.summary__title {
+  font: bold 1.8rem "Noto Serif JP";
+}
+
+.summary__lead {
+  color: red;
+}
+
+.summary__head {
+  padding-left: 0.5rem;
+  margin-top: 1rem;
+  border-left: 0.5rem solid red;
+  font: bold 1.2rem "Noto Sans JP";
+}
+
+.summary__head+p {
+  margin-top: 0.5rem;
+}
+
+/*-------------------------------------
+  detail
+-------------------------------------*/
+.detail {
+  max-width: 960px;
+  margin: 2rem auto 0;
+}
+
+.detail__head {
+  margin-top: 1rem;
+  padding-left: 0.5rem;
+  color: red;
+  border-left: 1rem solid;
+  font-weight: bold;
+}
+
+.detail iframe {
+  width: 100%;
+}
+
+.detail p {
+  margin-top: 0.5rem;
+  line-height: 1.5;
+}
+
+.detail img {
+  width: 100%;
+  max-height: 30rem;
+  margin-top: 0.5rem;
+  object-fit: contain;
+}
+
+
+.detail__img-list {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+.detail__img-list>img {
+  width: calc(100% / 3);
+}
+
+.detail__textbox {
+  width: 100%;
+  height: 15rem;
+  margin-top: 0.5rem;
+  padding: 0.5em;
+  border: 1px solid #666;
+  overflow-y: scroll;
+}
+
+.detail__textbox pre {
+  white-space: pre-wrap;
+  font-size: 0.8rem;
+}
