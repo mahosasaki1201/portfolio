@@ -3,122 +3,77 @@ html {
   font-family: "Noto Sans JP", "Noto Serif JP", sans-serif;
 }
 
+p,
+dd {
+  line-height: 1.5;
+}
+
+.container {
+  max-width: 1200px;
+  margin: auto;
+}
 /*-------------------------------------
   index top
 -------------------------------------*/
-.top {
-  width: 80%;
-  height: 100vh;
-  margin: auto;
-  padding-top: calc(100vh / 3);
-  background-color: transparent;
-}
 
-.top__bg {
+.nav {
   position: fixed;
-  top: 0;
-  left: 0;
-  z-index: -1;
-  width: 100%;
-  height: 100%;
-  background-color: #ccc;
+  top: 20vh;
+  right: calc(66% + 4rem);
+  text-align: right;
 }
 
-.top__name {
+.nav ul {
+  max-height: calc(80vh - 10rem);
+  overflow-y: scroll;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.nav ul::-webkit-scrollbar {
+  display: none;
+}
+
+.nav__title {
   font: 2rem "Noto Serif JP";
 }
 
-.scroll {
-  position: sticky;
-  top: calc(100vh / 3 * 2);
-  width: max-content;
-  font: 1.5rem "Noto Serif JP";
+.nav ul {
+  margin-top: 2rem ;
 }
 
-.scroll::after {
-  position: absolute;
-  bottom: -1rem;
-  left: calc(50% - 0.5rem);
-  content: "";
-  width: 1rem;
-  height: 1rem;
-  border-right: 1px solid #000;
-  border-bottom: 1px solid #000;
-  transform: rotate(45deg);
+.nav__item {
+  margin-top: 1rem;
+}
+
+.nav__return {
+  position: sticky;
+  top: calc(100vh - 6rem);
+  margin-top: 2rem;
+}
+
+.nav__item:hover,
+.nav__return:hover {
+  color: red;
 }
 
 /*-------------------------------------
   index about
 -------------------------------------*/
 .about {
-  display: grid;
-  grid-template: repeat(3, max-content) / 25rem 250px 25rem;
-  gap: 2rem;
-  place-content: center;
-  width: 100%;
-  margin-top: -2rem;
-  background-color: #fff;
+  width: 66%;
+  margin: 4rem 2rem 2rem auto;
 }
-
-.about p {
-  line-height: 1.5;
-}
-
-.about__center {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  grid-row: 1/4;
-  grid-column: 2;
-}
-
 .about-profile {
+  margin-top: 2rem;
   position: relative;
   padding: 1rem;
-  grid-row: 1/4;
   background-color: #fff;
   border: 1px solid #000;
   border-radius: 1rem;
 }
 
 .about-profile::after {
-  position: absolute;
-  top: calc(50% - 0.5rem);
-  right: calc(-0.5rem - 1px);
-  content: "";
-  width: 1rem;
-  height: 1rem;
-  border-right: 1px solid #000;
-  border-top: 1px solid #000;
-  background-color: #fff;
-  transform: rotate(45deg);
-}
-
-.about-profile__head {
-  margin-top: 2rem;
-  padding-left: 0.5rem;
-  border-left: 1rem solid red;
-  color: red;
-  font-weight: bold;
-}
-
-.about-profile__head:first-of-type {
-  margin-top: 0;
-}
-
-.about-profile__head+p {
-  margin-top: 1rem;
-}
-
-.about-strength {
-  position: relative;
-  padding: 1rem;
-  background-color: #fff;
-  border: 1px solid #000;
-  border-radius: 1rem;
-}
-
-.about-strength::after {
   position: absolute;
   top: calc(50% - 0.5rem);
   left: calc(-0.5rem - 1px);
@@ -131,87 +86,139 @@ html {
   transform: rotate(-45deg);
 }
 
-.about-strength__head+p {
+.about-profile__head {
   margin-top: 1rem;
+  padding-left: 0.5rem;
+  border-left: 0.5rem solid red;
+  font: bold 1.2rem "Noto Sans JP";
+}
+
+.about-profile__head:first-of-type {
+  margin-top: 0;
 }
 
 .about-strength__head {
   padding-left: 0.5rem;
-  border-left: 0.5rem solid red;
+  border-left: 1rem solid red;
+  color: red;
   font-weight: bold;
+}
+
+.about-strength__head + p,
+.about-profile__head + p {
+  margin-top: 0.5rem;
 }
 
 /*-------------------------------------
   index works
 -------------------------------------*/
 .works {
-  width: 100%;
-  margin: auto;
+  width: 66%;
+  margin: 4rem 2rem 2rem auto;
 }
 
 .works__title {
   width: max-content;
-  margin: auto;
+  margin-top: 2rem;
   color: red;
+  font: 1.5rem "Noto Serif JP";
 }
 
 .works-list {
   display: flex;
   flex-wrap: wrap;
-  width: 100%;
+  margin-top: 1rem;
 }
 
 .works-list__item {
-  flex: 0 1 calc(100% / 8);
-  height: 10rem;
+  position: relative;
+  flex: 0 0 7.5rem;
+  height: 7.5rem;
+}
+
+.works-list__item p {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: calc(100% - 2rem);
+  color: rgba(255, 255, 255, 0);
+  pointer-events: none;
   transition: 0.2s;
 }
 
-.works-list__item:hover {
-  flex: 0 1 20rem;
+.works-list__item:hover p {
+  color: rgba(255, 255, 255, 1);
 }
 
 .works-list__item img {
+  display: block;
   width: 100%;
   height: 100%;
   object-fit: cover;
+  transition: 0.2s;
+}
+
+.works-list__item:hover img {
+  filter: brightness(0.1);
 }
 
 /*-------------------------------------
   work section
 -------------------------------------*/
 .work__sect {
-  width: 80%;
-  max-width: 960px;
-  margin: 2rem auto 0;
-  padding-top: 2rem;
+  width: 66%;
+  margin: 1rem 0 0 auto;
+  padding: 2rem;
   border-top: 1px solid #000;
 }
+.work__sect:first-of-type {
+  margin-top: 0;
+  padding-top: 0;
+  border-top: none;
+}
 
-/*-------------------------------------
-  front
--------------------------------------*/
-.front {
-  width: 80%;
-  max-width: 960px;
+.work__sect iframe {
+  width: 100%;
+  margin-top: 1rem;
+}
 
-  text-align: right;
+.work__sect img {
+  width: 100%;
+  object-fit: contain;
 }
 
 /*-------------------------------------
-  summary
+  work summary
 -------------------------------------*/
-
-.summary p:not(.summary__lead) {
-  line-height: 1.5;
-}
-
 .summary__title {
   font: bold 1.8rem "Noto Serif JP";
 }
 
 .summary__lead {
   color: red;
+}
+
+.summary {
+  position: relative;
+  margin-top: 1rem;
+  padding: 1rem;
+  background-color: #fff;
+  border: 1px solid #000;
+  border-radius: 1rem;
+}
+
+.summary::after {
+  position: absolute;
+  top: calc(-0.5rem - 1px);
+  left: calc(50% - 0.5rem);
+  content: "";
+  width: 1rem;
+  height: 1rem;
+  border-left: 1px solid #000;
+  border-top: 1px solid #000;
+  background-color: #fff;
+  transform: rotate(45deg);
 }
 
 .summary__head {
@@ -221,51 +228,51 @@ html {
   font: bold 1.2rem "Noto Sans JP";
 }
 
-.summary__head+p {
+.summary__head:first-of-type {
+  margin-top: 0;
+}
+
+.summary__head + dd {
   margin-top: 0.5rem;
 }
 
 /*-------------------------------------
-  detail
+  work detail
 -------------------------------------*/
-.detail {
-  max-width: 960px;
-  margin: 2rem auto 0;
-}
-
 .detail__head {
-  margin-top: 1rem;
+  margin-top: 2rem;
   padding-left: 0.5rem;
   color: red;
   border-left: 1rem solid;
   font-weight: bold;
 }
 
-.detail iframe {
-  width: 100%;
-}
-
-.detail p {
+.detail__text {
   margin-top: 0.5rem;
-  line-height: 1.5;
 }
 
-.detail img {
-  width: 100%;
+.detail__img {
   max-height: 30rem;
-  margin-top: 0.5rem;
-  object-fit: contain;
+  margin-top: 1rem;
 }
 
-
-.detail__img-list {
+.detail__img-list--2col,
+.detail__img-list--3col {
   display: flex;
   flex-wrap: wrap;
   width: 100%;
+  margin-top: 1rem;
+  gap: 1rem;
 }
 
-.detail__img-list>img {
-  width: calc(100% / 3);
+.detail__img-list--2col > img,
+.detail__img-list--2col > div {
+  width: calc((100% - 1rem) / 2);
+  max-height: 30rem;
+}
+.detail__img-list--3col > img {
+  width: calc((100% - 2rem) / 3);
+  max-height: 30rem;
 }
 
 .detail__textbox {
