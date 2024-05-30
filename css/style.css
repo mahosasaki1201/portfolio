@@ -19,11 +19,12 @@ dd {
 .nav {
   position: fixed;
   top: 20vh;
-  right: calc(66% + 4rem);
+  right: calc(66% + 2rem);
   text-align: right;
 }
 
 .nav ul {
+  margin-top: 2rem;
   max-height: calc(80vh - 10rem);
   overflow-y: scroll;
   -ms-overflow-style: none;
@@ -38,12 +39,10 @@ dd {
   font: 2rem "Noto Serif JP";
 }
 
-.nav ul {
-  margin-top: 2rem ;
-}
-
 .nav__item {
+  position: relative;
   margin-top: 1rem;
+  transition: 0.2s;
 }
 
 .nav__return {
@@ -57,12 +56,30 @@ dd {
   color: red;
 }
 
+.nav__item--active {
+  color: red;
+  margin-right: 1rem;
+}
+
+.nav__item--active::after {
+  position: absolute;
+  content: "";
+  top: calc(50% - 0.5rem);
+  right: -1rem;
+  width: 1rem;
+  height: 1rem;
+  border-right: 0.5rem solid;
+  border-top: 0.5rem solid transparent;
+  border-bottom: 0.5rem solid transparent;
+}
+
 /*-------------------------------------
   index about
 -------------------------------------*/
 .about {
   width: 66%;
-  margin: 4rem 2rem 2rem auto;
+  margin: 4rem 0 2rem auto;
+  padding: 0 2rem;
 }
 .about-profile {
   margin-top: 2rem;
@@ -114,7 +131,8 @@ dd {
 -------------------------------------*/
 .works {
   width: 66%;
-  margin: 4rem 2rem 2rem auto;
+  margin: 4rem 0 2rem auto;
+  padding: 0 2rem;
 }
 
 .works__title {
