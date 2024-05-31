@@ -1,22 +1,18 @@
-// 交差を監視する要素を準備
-const targets = document.querySelectorAll("section");
+// メニュー現在位置
+const targets = document.querySelectorAll("main section");
 
-// 範囲の設定
 const options = {
   root: null,
   rootMargin: "-49% 0px",
   threshold: 0,
 };
 
-// Intersection Observerを使えるようにする
 const observer = new IntersectionObserver(intersect, options);
 
-// 対象の要素をそれぞれ監視する
 targets.forEach((target) => {
   observer.observe(target);
 });
 
-// 交差したときに実行する関数
 function intersect(entries) {
   entries.forEach((entry) => {
     let targetId = entry.target.id;
@@ -28,3 +24,26 @@ function intersect(entries) {
     }
   });
 }
+
+// モーダル
+const workImages = document.querySelectorAll(".work__sect img");
+const modal = document.querySelector(".modal");
+const modalImage = document.querySelector(".modal__image");
+const modalClose = document.querySelector(".modal__close");
+
+workImages.forEach((image) => {
+  image.addEventListener("click", (e) => {
+    modal.style.display = "grid";
+    modalImage.setAttribute("src", e.currentTarget.getAttribute("src"));
+  });
+});
+
+// 画像外クリック時
+document.addEventListener("click", (e)=> {
+  if (e.target === modal) {
+    modal.style.display = "none";
+  }
+  if (e.target === modalClose) {
+    modal.style.display = "none";
+  }
+});

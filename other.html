@@ -26,8 +26,8 @@
   <body>
     <div class="container">
       <nav class="nav">
-        <h1 class="nav__title">その他</h1>
-        <ul>
+        <div class="nav__title"><h1>その他</h1></div>
+        <ul class="nav__item-list">
           <li class="nav__item"><a href="#count">カウントダウンボード</a></li>
           <li class="nav__item"><a href="#de">デッサン</a></li>
           <li class="nav__item"><a href="#blnd">Blender</a></li>
@@ -35,57 +35,58 @@
         <p class="nav__return"><a href="index.html">Topへ戻る</a></p>
       </nav>
 
-      <section class="work__sect" id="count">
-        <h2 class="summary__title">
-          いしかわ百万石文化祭2023　カウントダウンボード
-        </h2>
-        <p class="summary__lead">「デジタル顔はめパネル」機能で注目をひく</p>
-        <div class="detail__img-list--2col">
-          <img
-            src="img/count-komatsu.png"
-            alt="いしかわ百万石文化祭2023 カウントダウンボード 小松空港"
-          />
-          <img
-            src="img/count-noto.png"
-            alt="いしかわ百万石文化祭2023 カウントダウンボード 能登空港"
-          />
-        </div>
+      <main class="main">
+        <section class="work__sect" id="count">
+          <h2 class="summary__title">
+            いしかわ百万石文化祭2023　カウントダウンボード
+          </h2>
+          <p class="summary__lead">「デジタル顔はめパネル」機能で注目をひく</p>
+          <div class="detail__img-list flex--2col">
+            <img
+              src="img/count-komatsu.png"
+              alt="いしかわ百万石文化祭2023 カウントダウンボード 小松空港"
+            />
+            <img
+              src="img/count-noto.png"
+              alt="いしかわ百万石文化祭2023 カウントダウンボード 能登空港"
+            />
+          </div>
 
-        <dl class="summary">
-          <dt class="summary__head">作品概要</dt>
-          <dd>
-            国民文化祭の開催に向け、小松空港・能登空港にカウントダウンボードが設置されました。残り日数の表示に加えて、PR動画の放映や、画像処理を利用した顔はめ看板としての機能も組み込まれています。所属ゼミを中心として制作にあたり、私は動作を制御するプログラムの制作を担当しました。
-          </dd>
-          <dt class="summary__head">制作時期／種別</dt>
-          <dd>2022年10～12月／プログラミング</dd>
-          <dt class="summary__head">使用ツール</dt>
-          <dd>Pyhton（プログラム本体）</dd>
-          <dd>After Effects（能登空港版のアニメ制作）</dd>
-        </dl>
+          <dl class="summary">
+            <dt class="summary__head">作品概要</dt>
+            <dd>
+              国民文化祭の開催に向け、小松空港・能登空港にカウントダウンボードが設置されました。残り日数の表示に加えて、PR動画の放映や、画像処理を利用した顔はめ看板としての機能も組み込まれています。所属ゼミを中心として制作にあたり、私は動作を制御するプログラムの制作を担当しました。
+            </dd>
+            <dt class="summary__head">制作時期／種別</dt>
+            <dd>2022年10～12月／プログラミング</dd>
+            <dt class="summary__head">使用ツール</dt>
+            <dd>Pyhton（プログラム本体）</dd>
+            <dd>After Effects（能登空港版のアニメ制作）</dd>
+          </dl>
 
-        <h3 class="detail__head">左：小松版ボードの詳細</h3>
-        <p class="detail__text">
-          60インチモニターをスチロール材で覆っています。内部にはWEBカメラとパソコンが備え付けられています。
-          国民文化祭のPR動画が再生されており、ボードの前に人が立つと、その人の顔に隈取の化粧が施されて表示されます。
-          （左の野村萬斎さんのパネルは私達の制作物ではありません）
-        </p>
-        <h3 class="detail__head">右：能登版ボードの詳細</h3>
-        <p class="detail__text">
-          キリコ祭りのアニメーションが再生されており、担ぎ手の顔部分にボードを見ている人の顔がはめ込まれます。
-          （左右のパネル・ボードは制作物ではありません）
-        </p>
-        <h3 class="detail__head">小松版　動作フロー</h3>
-        <img
-          class="detail__img"
-          src="img/count-kflow.png"
-          alt="動作フロー（小松版）"
-        />
-        <p class="detail__text">
-          顔検出には速度を重視してMTCNNを、画像処理にはOpenCVとPillowを使用しました。並列処理ができるthreadingモジュールで処理を高速化し、リアルタイムでの顔検出と画像合成を可能にしています。
-        </p>
-        <h3 class="detail__head">小松版　ソースコード</h3>
-        <div class="detail__textbox">
-          <pre><code class="language-python">
+          <h3 class="detail__head">左：小松版ボードの詳細</h3>
+          <p class="detail__text">
+            60インチモニターをスチロール材で覆っています。内部にはWEBカメラとパソコンが備え付けられています。
+            国民文化祭のPR動画が再生されており、ボードの前に人が立つと、その人の顔に隈取の化粧が施されて表示されます。
+            （左の野村萬斎さんのパネルは私達の制作物ではありません）
+          </p>
+          <h3 class="detail__head">右：能登版ボードの詳細</h3>
+          <p class="detail__text">
+            キリコ祭りのアニメーションが再生されており、担ぎ手の顔部分にボードを見ている人の顔がはめ込まれます。
+            （左右のパネル・ボードは制作物ではありません）
+          </p>
+          <h3 class="detail__head">小松版　動作フロー</h3>
+          <img
+            class="detail__img"
+            src="img/count-kflow.png"
+            alt="動作フロー（小松版）"
+          />
+          <p class="detail__text">
+            顔検出には速度を重視してMTCNNを、画像処理にはOpenCVとPillowを使用しました。並列処理ができるthreadingモジュールで処理を高速化し、リアルタイムでの顔検出と画像合成を可能にしています。
+          </p>
+          <h3 class="detail__head">小松版　ソースコード</h3>
+          <div class="detail__textbox">
+            <pre><code class="language-python">
 # python -m pip install
 
 import os
@@ -420,19 +421,19 @@ def extract_video():
 if __name__ == "__main__":
     # extract_video()
     main()</code></pre>
-        </div>
-        <h3 class="detail__head">能登版　動作フロー</h3>
-        <img
-          class="detail__img"
-          src="img/count-nflow.png"
-          alt="動作フロー（能登版）"
-        />
-        <p class="detail__text">
-          キリコ祭りのアニメーションの顔部分をマスクした動画と、フレームごとのマスクの座標を記録したファイルを別途用意し、顔を検出したらそれらのデータから適切な位置に検出した顔を配置・合成します。
-        </p>
-        <h3 class="detail__head">能登版　ソースコード</h3>
-        <div class="detail__textbox">
-          <pre><code class="language-python">
+          </div>
+          <h3 class="detail__head">能登版　動作フロー</h3>
+          <img
+            class="detail__img"
+            src="img/count-nflow.png"
+            alt="動作フロー（能登版）"
+          />
+          <p class="detail__text">
+            キリコ祭りのアニメーションの顔部分をマスクした動画と、フレームごとのマスクの座標を記録したファイルを別途用意し、顔を検出したらそれらのデータから適切な位置に検出した顔を配置・合成します。
+          </p>
+          <h3 class="detail__head">能登版　ソースコード</h3>
+          <div class="detail__textbox">
+            <pre><code class="language-python">
 import cv2
 import numpy as np
 from mtcnn_cv2 import MTCNN
@@ -613,70 +614,80 @@ def main():
     cv2.destroyAllWindows()
 
 main()</code></pre>
-        </div>
-        <h3 class="detail__head">北國新聞様に取材していただきました</h3>
-        <img class="detail__img" src="img/count-news.png" alt="北國新聞記事" />
-      </section>
+          </div>
+          <h3 class="detail__head">北國新聞様に取材していただきました</h3>
+          <img
+            class="detail__img"
+            src="img/count-news.png"
+            alt="北國新聞記事"
+          />
+        </section>
 
-      <section class="work__sect" id="de">
-        <h2 class="summary__title">デッサン</h2>
-        <p class="summary__lead">教わらずに見て学ぶデッサン</p>
+        <section class="work__sect" id="de">
+          <h2 class="summary__title">デッサン</h2>
+          <p class="summary__lead">教わらずに見て学ぶデッサン</p>
 
-        <dl class="summary">
-          <dt class="summary__head">作品概要</dt>
-          <dd>
-            ダヴィンチやデューラーなど著名な画家や、大学の教授のデッサンの模写から始め、実際にモチーフを見ながらのデッサンも行いました。完全に自己流ですが、ストロークの向きで面の角度を表現しているのが特徴的かと思います。
-          </dd>
-          <dt class="summary__head">制作時期／種別</dt>
-          <dd>2022年10月～2023年8月／デッサン</dd>
-          <dt class="summary__head">使用ツール</dt>
-          <dd>鉛筆（ステッドラー、6B～4H）</dd>
-        </dl>
+          <dl class="summary">
+            <dt class="summary__head">作品概要</dt>
+            <dd>
+              ダヴィンチやデューラーなど著名な画家や、大学の教授のデッサンの模写から始め、実際にモチーフを見ながらのデッサンも行いました。完全に自己流ですが、ストロークの向きで面の角度を表現しているのが特徴的かと思います。
+            </dd>
+            <dt class="summary__head">制作時期／種別</dt>
+            <dd>2022年10月～2023年8月／デッサン</dd>
+            <dt class="summary__head">使用ツール</dt>
+            <dd>鉛筆（ステッドラー、6B～4H）</dd>
+          </dl>
 
-        <h3 class="detail__head">模写</h3>
-        <div class="detail__img-list--3col">
-          <img src="img/de2.png" alt="" />
-          <img src="img/de3.png" alt="" />
-          <img src="img/de4.png" alt="" />
-          <img src="img/de5.png" alt="" />
-          <img src="img/de6.png" alt="" />
-          <img src="img/de7.png" alt="" />
-          <img src="img/de8.png" alt="" />
-          <img src="img/de9.png" alt="" />
-        </div>
-        <h3 class="detail__head">非模写</h3>
-        <div class="detail__img-list--3col">
-          <img src="img/de1.png" alt="" />
-          <img src="img/de10.png" alt="" />
-          <img src="img/de11.png" alt="" />
-        </div>
-      </section>
+          <h3 class="detail__head">模写</h3>
+          <div class="detail__img-list flex--3col">
+            <img src="img/de2.png" alt="" />
+            <img src="img/de3.png" alt="" />
+            <img src="img/de4.png" alt="" />
+            <img src="img/de5.png" alt="" />
+            <img src="img/de6.png" alt="" />
+            <img src="img/de7.png" alt="" />
+            <img src="img/de8.png" alt="" />
+            <img src="img/de9.png" alt="" />
+          </div>
+          <h3 class="detail__head">非模写</h3>
+          <div class="detail__img-list flex--3col">
+            <img src="img/de1.png" alt="" />
+            <img src="img/de10.png" alt="" />
+            <img src="img/de11.png" alt="" />
+          </div>
+        </section>
 
-      <section class="work__sect" id="blnd">
-        <h2 class="summary__title">Blender練習</h2>
-        <p class="summary__lead">体系的に理解したい</p>
+        <section class="work__sect" id="blnd">
+          <h2 class="summary__title">Blender練習</h2>
+          <p class="summary__lead">体系的に理解したい</p>
 
-        <div class="detail__img-list--3col">
-          <img src="img/bl1.png" alt="" />
-          <img src="img/bl2.png" alt="" />
-          <img src="img/bl3.png" alt="" />
-          <img src="img/bl4.png" alt="" />
-          <img src="img/bl5.png" alt="" />
-          <img src="img/bl6.png" alt="" />
-          <img src="img/bl7.png" alt="" />
-          <img src="img/bl8.png" alt="" />
-        </div>
-        <dl class="summary">
-          <dt class="summary__head">作品概要</dt>
-          <dd>
-            Blenderの練習で作成したものです。ネット上のチュートリアルを参考にしているものがほとんどです。手順をなぞるだけでなく、何を目的とした工程かを理解しながら作ることを心がけています。
-          </dd>
-          <dt class="summary__head">制作時期／種別</dt>
-          <dd>2023年10月～　／3DCG</dd>
-          <dt class="summary__head">使用ツール</dt>
-          <dd>Blender</dd>
-        </dl>
-      </section>
+          <div class="detail__img-list flex--3col">
+            <img src="img/bl1.png" alt="" />
+            <img src="img/bl2.png" alt="" />
+            <img src="img/bl3.png" alt="" />
+            <img src="img/bl4.png" alt="" />
+            <img src="img/bl5.png" alt="" />
+            <img src="img/bl6.png" alt="" />
+            <img src="img/bl7.png" alt="" />
+            <img src="img/bl8.png" alt="" />
+          </div>
+          <dl class="summary">
+            <dt class="summary__head">作品概要</dt>
+            <dd>
+              Blenderの練習で作成したものです。ネット上のチュートリアルを参考にしているものがほとんどです。手順をなぞるだけでなく、何を目的とした工程かを理解しながら作ることを心がけています。
+            </dd>
+            <dt class="summary__head">制作時期／種別</dt>
+            <dd>2023年10月～／3DCG</dd>
+            <dt class="summary__head">使用ツール</dt>
+            <dd>Blender</dd>
+          </dl>
+        </section>
+      </main>
+    </div>
+
+    <div class="modal">
+      <img class="modal__image" src="" alt="" />
+      <button class="modal__close">&times;</button>
     </div>
 
     <script>
